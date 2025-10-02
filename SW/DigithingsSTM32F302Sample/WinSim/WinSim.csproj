@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <AnalysisLevel>5.0</AnalysisLevel>
+    <Platforms>AnyCPU;ARM64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\CpStateA1.jpg" />
+    <None Remove="Images\CpStateA2.jpg" />
+    <None Remove="Images\CpStateB1.jpg" />
+    <None Remove="Images\CpStateB2.jpg" />
+    <None Remove="Images\CpStateC1.jpg" />
+    <None Remove="Images\CpStateC2.jpg" />
+    <None Remove="Images\Logo.png" />
+    <None Remove="Images\strunk-logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\CpStateA1.jpg" />
+    <Resource Include="Images\CpStateA2.jpg" />
+    <Resource Include="Images\CpStateB1.jpg" />
+    <Resource Include="Images\CpStateB2.jpg" />
+    <Resource Include="Images\CpStateC1.jpg" />
+    <Resource Include="Images\CpStateC2.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ScottPlot.WPF" Version="5.0.36" />
+    <PackageReference Include="Syncfusion.Tools.WPF" Version="25.1.38" />
+    <PackageReference Include="System.IO.Ports" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

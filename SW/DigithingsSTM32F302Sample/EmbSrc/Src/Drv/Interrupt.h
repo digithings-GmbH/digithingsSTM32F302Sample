@@ -1,0 +1,11 @@
+void IntUnused(void);
+void intReset(void);
+void intNmi(void);
+void intHardFault(void);
+void intMemManage(void);
+void intBusFault(void);
+void intUsageFault(void);
+void intSvCall(void);
+void intDebMonitor(void);
+void intPendSv(void);
+void intSysTick(void);

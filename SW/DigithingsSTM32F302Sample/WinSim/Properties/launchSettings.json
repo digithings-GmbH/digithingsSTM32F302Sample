@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "WinSim": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

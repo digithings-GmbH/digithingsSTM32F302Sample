@@ -1,0 +1,2 @@
+DigithingsSTM32F302Sample.sln
+@echo

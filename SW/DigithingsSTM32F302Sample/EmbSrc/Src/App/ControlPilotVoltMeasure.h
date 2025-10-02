@@ -1,0 +1,5 @@
+typedef enum { CONTROL_PILOT_VOLTAGE_RANGE_UNDEF, CONTROL_PILOT_VOLTAGE_RANGE_A, CONTROL_PILOT_VOLTAGE_RANGE_B, CONTROL_PILOT_VOLTAGE_RANGE_C } eControlPilotMeasureVoltageRange;
+
+void ControlPilotVoltMeasureInit(void);
+void ControlPilotVoltMeasureMain(void);
+eControlPilotMeasureVoltageRange ControlPilotVoltMeasureGetRange(void);

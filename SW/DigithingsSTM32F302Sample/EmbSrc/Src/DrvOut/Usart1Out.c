@@ -1,0 +1,30 @@
+
+#include "../Target/Target.h"
+#include "../HalOut/SerialOutDef.h"
+#include "../HalOut/Serial1Out.h"
+#include "../STM32F302_Gen/STM32F302_USART1_EXTI25_Def.h"
+
+void Usart1OutInit(void) {
+}
+
+void Usart1OutMain(void) {
+	tSerialData Data;
+
+	volatile sSTM32F302_USART1_EXTI25* pSTM32F302_USART1_EXTI25 = (sSTM32F302_USART1_EXTI25*)F302_USART1_ADR;
+	volatile uSTM32F302_USART1_EXTI25_CR1 STM32F302_USART1_EXTI25_CR1;
+
+	Data = Serial1OutGetByte();
+    //Data.Count = 1; /* only for testing */
+    //Data.Data = 0x55;
+	if (Data.Count == 1) {
+		TargetRegisterWriteUsart1Tdr(Data.Data);
+		STM32F302_USART1_EXTI25_CR1.All = pSTM32F302_USART1_EXTI25->STM32F302_USART1_EXTI25_CR1.All;
+		STM32F302_USART1_EXTI25_CR1.Bit.TE = 1;
+		pSTM32F302_USART1_EXTI25->STM32F302_USART1_EXTI25_CR1.All = STM32F302_USART1_EXTI25_CR1.All;
+	}
+	else {
+		STM32F302_USART1_EXTI25_CR1.All = pSTM32F302_USART1_EXTI25->STM32F302_USART1_EXTI25_CR1.All;
+		STM32F302_USART1_EXTI25_CR1.Bit.TE = 0;
+		pSTM32F302_USART1_EXTI25->STM32F302_USART1_EXTI25_CR1.All = STM32F302_USART1_EXTI25_CR1.All;
+	}
+}
