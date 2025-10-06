@@ -2,8 +2,7 @@ This project is a sample to show how to develop embedded Software with a ARM Cor
 In some embedded microcontroller projects the software in SDKc, IDEs or operating systems is very big. 3 Million or more lines of code is the rule.
 Mostly you can write software with the same functionality in less than millions of code.
 
-This example show you the using of RCC with PLL, ADC with DMA, Usart, Timer PWM for digital LED with DMA and SPI for the NFC chip ST25R3916.
-With only 2400 line of code in C-Files.
+This example show you the using of RCC with PLL, ADC with DMA, Usart, Timer PWM for digital LED with DMA and SPI for the NFC chip ST25R3916 with only 2400 line of code in C-Files.
 
 This is a little cutout of a wallbox project for charging cars.
 
